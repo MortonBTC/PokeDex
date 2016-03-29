@@ -17,6 +17,7 @@
   },
   "homepage": "https://https://github.com/MortonBTC/PokeDex.git#readme",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1"
   }
 }
