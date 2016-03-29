@@ -1,9 +1,9 @@
 var gulp = require('gulp');
-var htmlhint = require('gulp-htmlhint');
-var css_validation = require('gulp-css-validator');
-var jslint = require('gulp-jslint');
-var browserify = require('gulp-browserify');
-var ugligy = require('gulp-uglify');
+//var htmlhint = require('gulp-htmlhint');
+//var css_validation = require('gulp-css-validator');
+//var jslint = require('gulp-jslint');
+//var browserify = require('gulp-browserify');
+//var ugligy = require('gulp-uglify');
 
 gulp.task('default', ['html', 'js', 'css']);
 
