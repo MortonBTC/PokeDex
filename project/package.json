@@ -1,0 +1,22 @@
+{
+  "name": "PokeDex",
+  "version": "1.0.0",
+  "description": "PokeDex",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anyweez/whiteboard-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MortonBTC/PokeDex.git/issues"
+  },
+  "homepage": "https://https://github.com/MortonBTC/PokeDex.git#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
