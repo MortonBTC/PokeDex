@@ -1,6 +1,6 @@
 module.exports = [{
     id: 0,
-    name: 'PikaChu',
+    name: 'Pikachu',
     type: 'Electric',
     form: 'First Form',
 }, 

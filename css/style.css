@@ -9,7 +9,7 @@ input[type='text'] {
     font-size: 1.5em;
     width: 50%;
 }
-.vehicle {
+.creatures {
     border: 1px solid grey;
     margin: 1%;
     padding: 1%;
@@ -31,18 +31,18 @@ h1 {
   color: darkred;
   font-size: 45px;
 }
-#cart { 
-  width: 550px;
-  height: 260px;
+
+#ball img { 
+  width: 350px;
+  height: 350px;
   float: left; 
   margin-top: 1em; 
-  border: 1px solid black;
   position: absolute;
-  right: 5%;
+  right: 20%;
   top: 30%;
-  overflow-y: scroll;
   padding: 10px;
 }
+/*
 #cart ol { 
   margin: 0; 
   padding: 1em 0 1em 3em;
@@ -60,3 +60,4 @@ h1 {
   overflow-y: scroll;
   padding: 10px;
 }
+*/

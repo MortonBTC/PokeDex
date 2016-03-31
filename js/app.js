@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
         element.innerHTML = html;
         parent.appendChild(element);
     }
-});
+
 
    // Filter on regular expressions
     var search = document.getElementById('search-box');
@@ -82,3 +82,5 @@ window.addEventListener('load', function () {
 
         },
     });
+    
+});
