@@ -43,6 +43,14 @@ h1 {
   padding: 10px;
   z-index: -1;
 }
+
+#grass {
+    position: absolute;
+    height: 400px;
+    width: 650px;
+    right: 0%;
+    bottom: 1px;
+}
 /*
 #cart ol { 
   margin: 0; 
