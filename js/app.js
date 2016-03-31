@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
     });
 
     $('.pokemon').draggable();
-    $('h1').droppable({
+    $('ball').droppable({
         drop: function (e, thud) {
             console.log(e);
 
