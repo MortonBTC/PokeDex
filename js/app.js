@@ -1,3 +1,4 @@
+
 function filterPokemon(pokemon, category) {
     for (var i = 0; i < pokemon.length; i++) {
         // Show it.
@@ -81,4 +82,3 @@ window.addEventListener('load', function () {
 
         },
     });
-});
