@@ -41,6 +41,7 @@ h1 {
   right: 20%;
   top: 30%;
   padding: 10px;
+  z-index: -1;
 }
 /*
 #cart ol { 
