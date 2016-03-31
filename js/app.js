@@ -64,6 +64,11 @@ window.addEventListener('load', function () {
 
     $('.pokemon').draggable();
     $('ball').droppable({
+    $('.pokemon').draggable({
+        revert: true,
+    });
+//    var ball = document.getElementById("ball")
+    $('#ball').droppable({
         drop: function (e, thud) {
             console.log(e);
 
