@@ -20,24 +20,24 @@ window.addEventListener('load', function () {
 
     // Rendering foods at the beginning
     var parent = document.getElementById('results');
-    var generator = _.template(document.getElementById('pokemon-template').textContent);
+    var generator = _.template(document.getElementById('poke-template').textContent);
 
     for (var i = 0; i < pokemon.length; i++) {
         var html = generator({
-            food: {
+            pokemon: {
                 name: pokemon[i].name,
                 type: pokemon[i].type,
                 form: pokemon[i].form,
             },
         });
 
-        var el = document.createElement('div');
-        el.classList.add('pokemon');
+        var element = document.createElement('div');
+        element.classList.add('pokemon');
         // set the ID for this element.
-        el.setAttribute('id', 'pokemon-' + pokemon[i].id);
+        element.setAttribute('id', 'pokemon-' + pokemon[i].id);
 
-        el.innerHTML = html;
-        parent.appendChild(el);
+        element.innerHTML = html;
+        parent.appendChild(element);
     }
 });
 
@@ -68,12 +68,12 @@ window.addEventListener('load', function () {
             console.log(e);
 
             var elementId = thud.draggable.attr('id');
-            var id = parseInt(elementId.substr(5));
+            var id = parseInt(elementId.substr(8));
 
             for (var i = 0; i < pokemon.length; i++) {
                 // Find the item to change, then change it.
-                if (foods[i].id === id) {
-                    foods[i].name = 'OMG ITS ' + pokemon[i].name;
+                if (pokemon[i].id === id) {
+                    pokemon[i].name = 'I choose you!, ' + pokemon[i].name;
                 }
             }
             console.log(pokemon);
