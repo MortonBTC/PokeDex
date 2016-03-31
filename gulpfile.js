@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass')
+////var sass = require('gulp-sass')
 //var htmlhint = require('gulp-htmlhint');
 //var css_validation = require('gulp-css-validator');
 //var jslint = require('gulp-jslint');
@@ -37,6 +37,6 @@ gulp.task('js', function () {
 
 gulp.task('watch', function(){
     gulp.watch('./*.html', ['html']);
-    gulp.watch('./scss/*.scss', ['css']);
+    gulp.watch('./css/*.css', ['css']);
     gulp.watch('./js/*.js', ['js']);
 })
