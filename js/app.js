@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
     var parent = document.getElementById('results');
     var generator = _.template(document.getElementById('pokemon-template').textContent);
 
-    for (var i = 0; i < foods.length; i++) {
+    for (var i = 0; i < pokemon.length; i++) {
         var html = generator({
             food: {
                 name: pokemon[i].name,
