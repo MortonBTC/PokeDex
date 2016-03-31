@@ -62,6 +62,8 @@ window.addEventListener('load', function () {
         }
     });
 
+    $('.pokemon').draggable();
+    $('ball').droppable({
     $('.pokemon').draggable({
         revert: true,
     });
