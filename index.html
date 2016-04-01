@@ -7,13 +7,10 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
         <script type="text/template" id="poke-template">
-        <div class="creatures">
+        <div class="creatures" class="pokemon-<%= pokemon.id %>">
             <h2><%= pokemon.name %></h2>
-            <p>
-                <%= pokemon.type %>
-            </p>
-            <p>
-                <%= pokemon.form %>
+            <h4 class="des"><span> <%= pokemon.type %> type - <%= pokemon.form %></span></h4>
+            <p class="got">
             </p>
         </div>
         </script>

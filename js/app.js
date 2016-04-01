@@ -81,6 +81,8 @@ window.addEventListener('load', function () {
             console.log(pokemon);
             // what element just got dropped?
             // change the element: change the name
+            $('.got').find('.des').remove(); // doesn't work. fix
+            $('<p>').text('You caught it!').appendTo('#pokemon-' + id + ' .got');
         },
     });
         $('#grass').droppable({
@@ -97,6 +99,8 @@ window.addEventListener('load', function () {
             console.log(pokemon);
             // what element just got dropped?
             // change the element: change the name
+    //      $('#pokemon-' + id).find('#type, #form').remove();
+            $('<p>').text('Now you released it!').appendTo('#pokemon-' + id + " .got");
         },
     });
     
