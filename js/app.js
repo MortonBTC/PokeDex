@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 
         element.innerHTML = html;
         parent.appendChild(element);
-    }
+    }//end for loop
 
 
    // Filter on regular expressions
@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
         // does this element's name match the regular expression?
         for (var i = 0; i < pokemon.length; i++) {
             var element = document.getElementById('pokemon-' + pokemon[i].id);
-            if (pattern.test(pokemon[i].name)) {
+            if (pattern.test(pokemon[i].name.toLowerCase())) {
                 // Show it
                 element.classList.remove('hidden');
             } else {
@@ -60,18 +60,15 @@ window.addEventListener('load', function () {
                 element.classList.add('hidden');
             }
         }
-    });
+    });// end keyup function
 
-    $('.pokemon').draggable();
-    $('ball').droppable({
+
     $('.pokemon').draggable({
         revert: true,
+        cursor: "move", cursorAt: { top: 56, left: 56 },
     });
-//    var ball = document.getElementById("ball")
     $('#ball').droppable({
         drop: function (e, thud) {
-            console.log(e);
-
             var elementId = thud.draggable.attr('id');
             var id = parseInt(elementId.substr(8));
 
@@ -80,11 +77,26 @@ window.addEventListener('load', function () {
                 if (pokemon[i].id === id) {
                     pokemon[i].name = 'I choose you!, ' + pokemon[i].name;
                 }
-            }
+            }//end for loop
             console.log(pokemon);
             // what element just got dropped?
             // change the element: change the name
+        },
+    });
+        $('#grass').droppable({
+        drop: function (e, thud) {
+            var elementId = thud.draggable.attr('id');
+            var id = parseInt(elementId.substr(8));
 
+            for (var i = 0; i < pokemon.length; i++) {
+                // Find the item to change, then change it.
+                if (pokemon[i].id === id) {
+                    pokemon[i].name = 'You\'re released!, ' + pokemon[i].name;
+                }
+            }//end for loop
+            console.log(pokemon);
+            // what element just got dropped?
+            // change the element: change the name
         },
     });
     
