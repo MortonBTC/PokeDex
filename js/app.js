@@ -1,24 +1,7 @@
-
-function filterPokemon(pokemon, category) {
-    for (var i = 0; i < pokemon.length; i++) {
-        // Show it.
-        if (pokemon[i].type === category) {
-            // get the element
-            // remove the hidden class from it
-            var hit = document.getElementById('Pokemon-' + pokemon[i].id);
-            hit.classList.remove('hidden');
-            // Hide it.
-        } else {
-            var miss = document.getElementById('Pokemon-' + pokemon[i].id);
-            miss.classList.add('hidden');
-        }
-    }
-}
-
 window.addEventListener('load', function () {
     var pokemon = require('./pokemon');
 
-    // Rendering foods at the beginning
+    // Rendering pokemon at the beginning
     var parent = document.getElementById('results');
     var generator = _.template(document.getElementById('poke-template').textContent);
 
@@ -61,6 +44,25 @@ window.addEventListener('load', function () {
             }
         }
     });// end keyup function
+    var search2 = document.getElementById('search-box2');
+    search2.addEventListener('keyup', function () {
+        var word2 = search2.value;
+        var pattern2 = new RegExp(search2.value);
+
+        // search through `foods`
+        // using a for loop
+        // does this element's name match the regular expression?
+        for (var i = 0; i < pokemon.length; i++) {
+            var element2 = document.getElementById('pokemon-' + pokemon[i].id);
+            if (pattern2.test(pokemon[i].type.toLowerCase())) {
+                // Show it
+                element2.classList.remove('hidden');
+            } else {
+                // Hide it
+                element2.classList.add('hidden');
+            }
+        }
+    });// end keyup function
 
 
     $('.pokemon').draggable({
@@ -91,16 +93,25 @@ window.addEventListener('load', function () {
             var id = parseInt(elementId.substr(8));
 
             for (var i = 0; i < pokemon.length; i++) {
-                // Find the item to change, then change it.
                 if (pokemon[i].id === id) {
-                    pokemon[i].name = 'You\'re released!, ' + pokemon[i].name;
+                    pokemon[i].name = 'You released it!, ' + pokemon[i].name;
                 }
             }//end for loop
             console.log(pokemon);
-            // what element just got dropped?
-            // change the element: change the name
-    //      $('#pokemon-' + id).find('#type, #form').remove();
             $('<p>').text('Now you released it!').appendTo('#pokemon-' + id + " .got");
+        },
+    });
+    $('#bill').droppable({
+        drop: function (e, thud) {
+            var elementId = thud.draggable.attr('id');
+            var id = parseInt(elementId.substr(8));
+            for (var i = 0; i < pokemon.length; i++) {
+                if (pokemon[i].id === id) {
+                    pokemon[i].name = 'You put it in Bill\'s PC!, ' + pokemon[i].name;
+                }
+            }//end for loop
+            console.log(pokemon);
+            $('<p>').text('You stored it in Bill\'s PC!').appendTo('#pokemon-' + id + " .got");
         },
     });
     

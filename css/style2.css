@@ -52,13 +52,6 @@ h1 {
 #catch {
     color: white;
     margin: 2% 14%;
-    height: 300px;
-}
-#pics {
-    margin-left: 13.5%;
-}
-#pic img {
-    margin: 3%;
 }
 #links {
     margin-left: 30%;
@@ -70,23 +63,4 @@ h1 {
     color: white;
     text-transform: uppercase;
     border-top: 2px dotted rgb(94, 0, 24);
-}
-#ball, #grass, #bill{ 
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-.morph {
-    transition: all 0.5s ease;
-}
-.morph:hover {
-    transform: rotate(360deg);
-    border-radius: 50%;
-}
-.focus {
-    transition: all .5s ease;
-}
-.focus:hover {
-    border: 13px solid rgb(82, 127, 60);
-    border-radius: 50%;
 }
