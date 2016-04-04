@@ -10,7 +10,7 @@ var browserify = require('gulp-browserify');
 gulp.task('default', ['html', 'js', 'css']);
 
 gulp.task('html', function () {
-   return gulp.src('index.html')
+   return gulp.src('/*.html')
 //        .pipe(htmlhint())
 //        .pipe(htmlhint.failReporter())
         .pipe(gulp.dest('./public/'));

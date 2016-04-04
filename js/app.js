@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
     var search = document.getElementById('search-box');
     search.addEventListener('keyup', function () {
         var word = search.value;
-        var pattern = new RegExp(search.value);
+        var pattern = new RegExp(word);
 
         // search through `foods`
         // using a for loop
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
     var search2 = document.getElementById('search-box2');
     search2.addEventListener('keyup', function () {
         var word2 = search2.value;
-        var pattern2 = new RegExp(search2.value);
+        var pattern2 = new RegExp(word2);
 
         // search through `foods`
         // using a for loop
@@ -70,6 +70,7 @@ window.addEventListener('load', function () {
         cursor: "move", cursorAt: { top: 56, left: 56 },
     });
     $('#ball').droppable({
+        tolerance: 'pointer',
         drop: function (e, thud) {
             var elementId = thud.draggable.attr('id');
             var id = parseInt(elementId.substr(8));
@@ -83,11 +84,12 @@ window.addEventListener('load', function () {
             console.log(pokemon);
             // what element just got dropped?
             // change the element: change the name
-            $('.got').find('.des').remove(); // doesn't work. fix
+            $('#pokemon-' + id + ' .got').find('p').remove(); // get #pokemon-... and find the p element that was created and remove()
             $('<p>').text('You caught it!').appendTo('#pokemon-' + id + ' .got');
         },
     });
         $('#grass').droppable({
+            tolerance: 'pointer',
         drop: function (e, thud) {
             var elementId = thud.draggable.attr('id');
             var id = parseInt(elementId.substr(8));
@@ -98,10 +100,12 @@ window.addEventListener('load', function () {
                 }
             }//end for loop
             console.log(pokemon);
+            $('#pokemon-' + id + ' .got').find('p').remove();
             $('<p>').text('Now you released it!').appendTo('#pokemon-' + id + " .got");
         },
     });
     $('#bill').droppable({
+        tolerance: 'pointer',
         drop: function (e, thud) {
             var elementId = thud.draggable.attr('id');
             var id = parseInt(elementId.substr(8));
@@ -111,8 +115,10 @@ window.addEventListener('load', function () {
                 }
             }//end for loop
             console.log(pokemon);
+            $('#pokemon-' + id + ' .got').find('p').remove();
             $('<p>').text('You stored it in Bill\'s PC!').appendTo('#pokemon-' + id + " .got");
         },
     });
     
 });
+
